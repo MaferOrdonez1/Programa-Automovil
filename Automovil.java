@@ -30,7 +30,7 @@ public class Automovil {
         blanco, negro, rojo, naranja, amarillo, verde, azul, violeta;
     } 
     private tipoColor color;
-    private int velocidadActual;
+    private int velocidadActual =0;
 
     public Automovil(String marca, int modelo, int motor, tipoCombustible combustible, tipoAutomovil automovil,int puertas, int asientos, int velocidadMáxima, tipoColor color,int velocidadActual) {
         this.marca = marca;
@@ -49,134 +49,79 @@ public class Automovil {
         return marca;
     }
 
-    /**
-     * @param marca the marca to set
-     */
     public void setMarca(String marca) {
         this.marca = marca;
     }
 
-    /**
-     * @return the modelo
-     */
     public int getModelo() {
         return modelo;
     }
-
-    /**
-     * @param modelo the modelo to set
-     */
+    
     public void setModelo(int modelo) {
         this.modelo = modelo;
     }
 
-    /**
-     * @return the motor
-     */
     public int getMotor() {
         return motor;
     }
 
-    /**
-     * @param motor the motor to set
-     */
     public void setMotor(int motor) {
         this.motor = motor;
     }
 
-    /**
-     * @return the combustible
-     */
     public tipoCombustible getCombustible() {
         return combustible;
     }
 
-    /**
-     * @param combustible the combustible to set
-     */
     public void setCombustible(tipoCombustible combustible) {
         this.combustible = combustible;
     }
 
-    /**
-     * @return the automovil
-     */
     public tipoAutomovil getAutomovil() {
         return automovil;
     }
 
-    /**
-     * @param automovil the automovil to set
-     */
     public void setAutomovil(tipoAutomovil automovil) {
         this.automovil = automovil;
     }
     
-    /**
-     * @return the puertas
-     */
     public int getPuertas() {
         return puertas;
     }
 
-    /**
-     * @param puertas the puertas to set
-     */
     public void setPuertas(int puertas) {
         this.puertas = puertas;
     }
 
-    /**
-     * @return the asientos
-     */
     public int getAsientos() {
         return asientos;
     }
 
-    /**
-     * @param asientos the asientos to set
-     */
     public void setAsientos(int asientos) {
         this.asientos = asientos;
     }
 
-    /**
-     * @return the velocidadMáxima
-     */
     public int getVelocidadMáxima() {
         return velocidadMáxima;
     }
 
-    /**
-     * @param velocidadMáxima the velocidadMáxima to set
-     */
     public void setVelocidadMáxima(int velocidadMáxima) {
         this.velocidadMáxima = velocidadMáxima;
     }
 
-    /**
-     * @return the color
-     */
     public tipoColor getColor() {
         return color;
     }
-    /**
-     * @param color the color to set
-     */
+
     public void setColor(tipoColor color) {
         this.color = color;
     }
-    
-    /**
-     * @return the color
-     */
+
     public int getVelocidadActual() {
         return velocidadActual;
     }
 
-    /**
-     * @param velocidadActual the velocidadActual to set
-     */
+
     public void setVelocidadActual(int velocidadActual) {
         this.velocidadActual = velocidadActual;
     }
@@ -211,10 +156,10 @@ public class Automovil {
     
     }
     
-    public int tiempo(int distancia)
+    public float tiempo(float distancia)
     {
-        int tiempo = distancia/velocidadActual;
-        return tiempo; 
+        float tiempo =distancia/velocidadActual;
+        return tiempo;
     }
     
     public void mostrar()
@@ -235,15 +180,18 @@ public class Automovil {
     {
         Automovil auto = new Automovil("Honda",2010,3,tipoCombustible.diesel,tipoAutomovil.SUV,4,5,150,tipoColor.rojo,100);
         auto.mostrar();  
+        System.out.println(" ");
+        System.out.println("Tiempo de llegada: "+auto.tiempo(12));
         System.out.println(" ");  
         auto.acelerar(20);
         System.out.println("Aceleración: " +auto.velocidadActual); 
         System.out.println(" ");  
         auto.desacelerar(50);
-        System.out.println("Desaceleración: " + auto.velocidadActual); 
-        System.out.println(" ");  
+        System.out.println("Desaceleración: " + auto.velocidadActual);
+        System.out.println(" "); 
         auto.frenar(); 
         System.out.println("Esta frenando: " + auto.velocidadActual); 
+        
 
     }
 }
